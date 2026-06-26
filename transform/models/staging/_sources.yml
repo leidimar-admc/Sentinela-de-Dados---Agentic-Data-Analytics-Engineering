@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "Dados operacionais SIMULADOS da Mar, carregados pelo gerador."
+    tables:
+      - name: raw_transactions
+      - name: raw_users
+      - name: raw_merchants
+      - name: raw_marketing_spend

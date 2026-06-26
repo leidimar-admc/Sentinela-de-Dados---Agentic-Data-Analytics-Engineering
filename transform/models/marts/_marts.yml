@@ -1,0 +1,23 @@
+version: 2
+
+models:
+  - name: mart_metrics
+    description: >
+      Camada de metricas (single source of truth) vigiada pelos agentes.
+      Contrato de dados habilitado: schema e tipos sao garantidos a cada build.
+    config:
+      contract:
+        enforced: true
+    columns:
+      - name: metric_date
+        data_type: date
+        tests: [not_null]
+      - name: metric_name
+        data_type: varchar
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['gmv', 'cashback_liability', 'approval_rate',
+                       'cashback_null_rate', 'active_users', 'roas']
+      - name: metric_value
+        data_type: double

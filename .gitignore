@@ -1,0 +1,26 @@
+# dados simulados e artefatos (regenerados de forma deterministica)
+data/raw/
+data/*.duckdb
+data/anomaly_manifest.json
+
+# dbt
+transform/target/
+transform/dbt_packages/
+transform/logs/
+
+# python
+**/__pycache__/
+*.py[cod]
+.venv/
+.env
+*.egg-info/
+.ruff_cache/
+.pytest_cache/
+transform/.user.yml
+
+# dbt anonymous usage id (por maquina)
+.user.yml
+transform/.user.yml
+
+# Arquivos de workspace do VS Code
+*.code-workspace

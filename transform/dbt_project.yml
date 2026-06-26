@@ -1,0 +1,19 @@
+name: 'mar'
+version: '1.0.0'
+config-version: 2
+profile: 'mar'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages", "logs"]
+
+# Camadas (medallion-ish): staging -> intermediate -> marts
+models:
+  mar:
+    staging:
+      +materialized: view
+    intermediate:
+      +materialized: view
+    marts:
+      +materialized: table

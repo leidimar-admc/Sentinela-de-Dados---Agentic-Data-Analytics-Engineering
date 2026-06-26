@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_transactions
+    description: "Transacoes limpas (cast/trim/rename)."
+    columns:
+      - name: txn_id
+        tests: [unique, not_null]
+      - name: status
+        tests:
+          - accepted_values:
+              values: ['approved', 'cancelled', 'refunded']
+  - name: stg_users
+    columns:
+      - name: user_id
+        tests: [unique, not_null]
+  - name: stg_marketing
+    columns:
+      - name: spend
+        tests: [not_null]

@@ -1,0 +1,16 @@
+# --- Data product (eixo 1): dbt + DuckDB ---
+dbt-duckdb>=1.7
+duckdb>=0.10
+pandas>=2.0
+numpy>=1.26
+faker>=24.0
+PyYAML>=6.0
+
+# --- Agentes (eixos 2-4): LangGraph + Claude, saidas Pydantic ---
+langgraph>=0.2
+anthropic>=0.40
+pydantic>=2.6
+
+# --- Dev / qualidade ---
+pytest>=8.0
+ruff>=0.5

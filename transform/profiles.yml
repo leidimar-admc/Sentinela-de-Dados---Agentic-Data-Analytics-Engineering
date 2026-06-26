@@ -1,0 +1,8 @@
+mar:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      # base gerada por data/generators/generate_mar.py
+      path: ../data/mar.duckdb
+      threads: 4
