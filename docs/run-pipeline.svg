@@ -60,7 +60,7 @@
 <tspan fill="#d29922">aguardando aprovação humana (PR)</tspan>
 </text>
 <text x="18" y="336" font-size="13.5" xml:space="preserve">
-<tspan fill="#8b949e">[trace] sentinela: 1.3ms | 10 chamada(s) LLM | $0.00</tspan>
+<tspan fill="#8b949e">[trace] sentinela: 1.0ms | 10 chamada(s) LLM | $0.00</tspan>
 </text>
 <text x="18" y="358" font-size="13.5" xml:space="preserve">
 <tspan fill="#3fb950">→ 10 anomalias processadas: causa raiz + correção proposta, aguardando aprovação</tspan>
