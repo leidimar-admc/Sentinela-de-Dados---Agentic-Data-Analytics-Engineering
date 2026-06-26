@@ -234,16 +234,8 @@ data/generators/      # gerador dos dados simulados + as anomalias (gabarito)
 | Decisão | Por quê |
 | --- | --- |
 | **DuckDB + dbt** | Zero infra e reproduzível. Em produção é só trocar o `profiles.yml` (BigQuery, Databricks). |
-| **Estatística detecta, LLM raciocina** | A anomalia precisa ser auditável e barata; o LLM custa e pode inventar. |
+| **Estatística detecta, LLM raciocina** | A detecção roda sobre todos os KPIs o tempo todo, então precisa ser barata e auditável. O LLM entra onde agrega: interpretar a causa e redigir a correção. |
 | **Dois modelos (barato e forte)** | Tarefa simples não precisa de modelo caro; rotear por dificuldade derruba o custo. |
 | **LangGraph com pausa humana** | O agente propõe, a pessoa aprova; nada muda em produção sozinho. |
 | **Saída sempre em Pydantic** | O modelo pode errar o conteúdo, nunca o formato. Valida cedo. |
 | **Dados sintéticos com anomalia plantada** | Dão o gabarito para a avaliação e deixam o repo rodar sem dado privado. |
-
-## Próximos passos
-
-1. **Linhagem coluna a coluna** (sqlglot): "o `roas` depende de `stg_marketing.spend`".
-2. **Sazonalidade mais esperta** (STL) no detector.
-3. **Traces** para Langfuse ou OpenTelemetry.
-4. **Conserto supervisionado**: `open_pr` abrindo um PR real via API do GitHub.
-5. **Modelo local opcional** (Ollama) para tarefas simples.

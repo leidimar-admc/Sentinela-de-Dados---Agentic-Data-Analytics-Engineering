@@ -234,16 +234,8 @@ data/generators/      # synthetic-data generator + the anomalies (ground truth)
 | Decision | Why |
 | --- | --- |
 | **DuckDB + dbt** | Zero infra and reproducible. In production just swap the `profiles.yml` (BigQuery, Databricks). |
-| **Statistics detect, the LLM reasons** | The anomaly must be auditable and cheap; the LLM costs money and can hallucinate. |
+| **Statistics detect, the LLM reasons** | Detection runs over every KPI all the time, so it must be cheap and auditable. The LLM steps in where it adds value: interpreting the cause and writing the fix. |
 | **Two models (cheap and strong)** | A simple task does not need an expensive model; routing by difficulty cuts cost. |
 | **LangGraph with a human pause** | The agent proposes, the person approves; nothing changes in production on its own. |
 | **Output always in Pydantic** | The model can get the content wrong, never the format. Validate early. |
 | **Synthetic data with a planted anomaly** | It provides the ground truth for evaluation and lets the repo run without private data. |
-
-## Next steps
-
-1. **Column-level lineage** (sqlglot): "`roas` depends on `stg_marketing.spend`".
-2. **Smarter seasonality** (STL) in the detector.
-3. **Traces** to Langfuse or OpenTelemetry.
-4. **Supervised fix**: `open_pr` opening a real PR through the GitHub API.
-5. **Optional local model** (Ollama) for simple tasks.
